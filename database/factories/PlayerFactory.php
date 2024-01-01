@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Player>
+ */
+class PlayerFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'name' => fake()->name(),
+            'ign' => fake()->userName(),
+            'role' => 'Roam',
+            'team_id' => 1,
+            'is_leader' => 0,
+            'status' => 'Active',
+            'description' => fake()->paragraph(),
+            'profile_picture' => 'logo/CIJFImE79ZU1sXh7Z5fOlIqegaqnUn2D86R0kzmM.png',
+        ];
+    }
+}
