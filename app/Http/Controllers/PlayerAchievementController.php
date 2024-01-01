@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PlayerAchievement;
 use Illuminate\Http\Request;
+use App\Models\TeamAchievement;
+use App\Models\PlayerAchievement;
 
 class PlayerAchievementController extends Controller
 {
@@ -12,7 +13,9 @@ class PlayerAchievementController extends Controller
      */
     public function index()
     {
-        //
+        $achievements = TeamAchievement::latest('created_at')->paginate(12);
+
+        return view('teamachievement.index', compact('achievements'));
     }
 
     /**

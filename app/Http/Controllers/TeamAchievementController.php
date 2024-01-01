@@ -14,9 +14,7 @@ class TeamAchievementController extends Controller
      */
     public function index()
     {
-        return view('teamachievement.index', [
-            'teamachievements' => TeamAchievement::latest('created_at')->paginate(12)
-        ]);
+        return view('teamachievement.index');
     }
 
     /**
@@ -48,7 +46,7 @@ class TeamAchievementController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TeamAchievement $teamAchievement)
+    public function show(TeamAchievement $teamachievement)
     {
         //
     }
@@ -67,7 +65,7 @@ class TeamAchievementController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TeamAchievement $teamachievement)
+    public function update(Request $request, TeamAchievement $achievement)
     {
         $formInputs = $request->validate([
             'achievement' => ['required', 'max:255'],
@@ -75,7 +73,7 @@ class TeamAchievementController extends Controller
             'year' => ['nullable'],
         ]);
 
-        $teamachievement->update($formInputs);
+        $achievement->update($formInputs);
 
         return redirect()->route('admin.teamachievements.index');
     }

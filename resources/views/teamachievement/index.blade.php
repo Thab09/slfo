@@ -7,13 +7,12 @@
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+            {{-- <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
                 <a href="{{ route('admin.teamachievements.create') }}" class="p-4 md:p-8">
                     <x-primary-button class="mt-6">Enter team achievement</x-primary-button>
                 </a>
-
                 <div class="grid grid-cols-1 gap-4 p-4 text-gray-900 dark:text-gray-100 md:p-8">
-                    @forelse ($teamachievements as $teamachievement)
+                    @forelse ($achievements as $teamachievement)
                         <div
                             class="flex flex-col gap-4 rounded-lg bg-white p-4 dark:bg-gray-700 md:flex-row md:items-center md:justify-between">
                             <p class="text-base font-medium">{{ $teamachievement->year }}
@@ -40,8 +39,9 @@
                 </div>
             </div>
             <div class="mt-4">
-                {{ $teamachievements->links() }}
-            </div>
+                {{ $achievements->links() }}
+            </div> --}}
+            <livewire:achievements />
         </div>
     </div>
 </x-app-layout>
