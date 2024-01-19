@@ -16,10 +16,9 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('ign');
             $table->string('role');
-            $table->foreignId('team_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('team_id')->nullable()->constrained()->nullOnDelete();
             $table->boolean('is_leader');
             $table->string('status');
-            $table->text('description')->nullable();
             $table->string('profile_picture')->nullable();
             $table->timestamps();
         });

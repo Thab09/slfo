@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\PlayerController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TeamAchievementController;
-use App\Http\Controllers\PlayerAchievementController;
+use App\Http\Controllers\Admin\TeamAchievementController;
+use App\Http\Controllers\Admin\PlayerAchievementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ use App\Http\Controllers\PlayerAchievementController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.home');
 });
 
 Route::get('/dashboard', function () {

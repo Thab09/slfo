@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('player_achievements', function (Blueprint $table) {
             $table->id();
             $table->text('achievement');
-            $table->foreignId('player_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('player_id')->nullable()->constrained()->nullOnDelete();
             $table->string('year')->nullable();
             $table->timestamps();
         });

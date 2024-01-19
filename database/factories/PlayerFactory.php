@@ -23,7 +23,6 @@ class PlayerFactory extends Factory
             'team_id' => 1,
             'is_leader' => 0,
             'status' => 'Active',
-            'description' => fake()->paragraph(),
             'profile_picture' => 'logo/CIJFImE79ZU1sXh7Z5fOlIqegaqnUn2D86R0kzmM.png',
         ];
     }

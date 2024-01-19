@@ -16,11 +16,16 @@ class Team extends Model
         if ($this->logo) {
             return url('storage/' . $this->logo);
         }
-        return null;
+        return '/images/slfowolf.svg';
     }
 
     public function players()
     {
         return $this->hasMany(Player::class);
+    }
+
+    public function achievements()
+    {
+        return $this->hasMany(TeamAchievement::class);
     }
 }

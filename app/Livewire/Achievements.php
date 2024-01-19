@@ -6,10 +6,11 @@ use Livewire\Component;
 use App\Models\TeamAchievement;
 use App\Http\Controllers\TeamAchievementController;
 use App\Http\Controllers\PlayerAchievementController;
+use App\Models\PlayerAchievement;
 
 class Achievements extends Component
 {
-    public $viewType = 'player'; // Default view type
+    public $viewType = 'team'; // Default view type
 
     public function render()
     {
@@ -25,12 +26,12 @@ class Achievements extends Component
     private function getTeamAchievements()
     {
         // Call TeamAchivementController method to retrieve team achievements
-        return TeamAchievement::latest('created_at')->paginate(12);
+        return TeamAchievement::orderBy('id', 'desc')->paginate(15);
     }
 
     private function getPlayerAchievements()
     {
         // Call PlayerAchivementController method to retrieve player achievements
-        return TeamAchievement::latest('created_at')->paginate(12);
+        return PlayerAchievement::orderBy('id', 'desc')->paginate(15);
     }
 }

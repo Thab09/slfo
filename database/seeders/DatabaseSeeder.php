@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             'password' => '123'
         ]);
 
-        Team::factory(10)->create();
+        Team::factory(13)->create();
         Team::factory(5)->create([
             'status' => 'Inactive'
         ]);
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Unassigned'
         ]);
 
-        Player::factory(10)->create([
+        Player::factory(15)->create([
             'team_id' => 1,
             'is_leader' => 0,
         ]);
@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
             'team_id' => 1,
             'is_leader' => 1,
         ]);
-        Player::factory(10)->create([
+        Player::factory(15)->create([
             'team_id' => 2,
             'is_leader' => 0,
         ]);
@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
             'team_id' => 2,
             'is_leader' => 1,
         ]);
-        Player::factory(10)->create([
+        Player::factory(15)->create([
             'team_id' => 3,
             'is_leader' => 0,
         ]);
@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
             'team_id' => 3,
             'is_leader' => 1,
         ]);
-        Player::factory(10)->create([
+        Player::factory(15)->create([
             'team_id' => 4,
             'is_leader' => 0,
         ]);
@@ -78,34 +78,34 @@ class DatabaseSeeder extends Seeder
             'is_leader' => 1,
         ]);
 
-        TeamAchievement::factory(3)->create();
-        TeamAchievement::factory(3)->create([
+        TeamAchievement::factory(13)->create();
+        TeamAchievement::factory(13)->create([
             'team_id' => 2
         ]);
-        TeamAchievement::factory(3)->create([
+        TeamAchievement::factory(13)->create([
             'team_id' => 3
         ]);
-        TeamAchievement::factory(3)->create([
+        TeamAchievement::factory(13)->create([
             'team_id' => 4
         ]);
-        TeamAchievement::factory(3)->create([
+        TeamAchievement::factory(13)->create([
             'team_id' => 5
         ]);
 
-        PlayerAchievement::factory(3)->create();
-        PlayerAchievement::factory(3)->create([
+        PlayerAchievement::factory(13)->create();
+        PlayerAchievement::factory(13)->create([
             'player_id' => 1
         ]);
-        PlayerAchievement::factory(3)->create([
+        PlayerAchievement::factory(13)->create([
             'player_id' => 2
         ]);
-        PlayerAchievement::factory(3)->create([
+        PlayerAchievement::factory(13)->create([
             'player_id' => 3
         ]);
-        PlayerAchievement::factory(3)->create([
+        PlayerAchievement::factory(13)->create([
             'player_id' => 4
         ]);
-        PlayerAchievement::factory(3)->create([
+        PlayerAchievement::factory(13)->create([
             'player_id' => 5
         ]);
 
