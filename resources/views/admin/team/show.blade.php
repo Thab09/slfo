@@ -12,10 +12,6 @@
                         <div class="lg:pr-10">
                             <p class="text-xl font-bold sm:text-3xl sm:font-black">{{ $team->name }}</p>
                             <p class="text-sm text-gray-400">{{ ucwords($team->status) }}</p>
-                            <p
-                                class="no-scrollbar mt-1 hidden max-h-[60px] overflow-y-scroll text-sm text-gray-300 sm:flex">
-                                {{ $team->description }}
-                            </p>
                         </div>
                         <div class="mt-2 flex gap-2 sm:gap-4">
                             <a href="{{ route('admin.teams.edit', $team) }}">
@@ -38,9 +34,6 @@
                         </div>
                     </div>
                 </div>
-                <p class="no-scrollbar overflow-y-scroll px-4 pb-4 pt-1 text-sm text-gray-300 sm:hidden">
-                    {{ $team->description }}
-                </p>
                 <div class="sm:px-6">
                     <livewire:team-show-table :$team />
                 </div>

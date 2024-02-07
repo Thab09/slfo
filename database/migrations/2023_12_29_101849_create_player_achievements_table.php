@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('player_achievements', function (Blueprint $table) {
             $table->id();
-            $table->text('achievement');
+            $table->string('placement')->nullable();
+            $table->string('achievement');
             $table->foreignId('player_id')->nullable()->constrained()->nullOnDelete();
             $table->string('year')->nullable();
             $table->timestamps();

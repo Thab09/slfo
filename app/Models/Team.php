@@ -11,6 +11,8 @@ class Team extends Model
 
     protected $guarded = [];
 
+    protected $with = ['players', 'achievements'];
+
     public function getLogo()
     {
         if ($this->logo) {

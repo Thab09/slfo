@@ -34,6 +34,7 @@ class PlayerAchievementController extends Controller
     public function store(Request $request)
     {
         $formInputs = $request->validate([
+            'placement' => ['nullable'],
             'achievement' => ['required', 'max:255'],
             'player_id' => ['array', Rule::exists('players', 'id')],
             'year' => ['nullable'],
@@ -75,6 +76,7 @@ class PlayerAchievementController extends Controller
     public function update(Request $request, PlayerAchievement $playerachievement)
     {
         $formInputs = $request->validate([
+            'placement' => ['nullable'],
             'achievement' => ['required', 'max:255'],
             'player_id' => [Rule::exists('players', 'id')],
             'year' => ['nullable'],

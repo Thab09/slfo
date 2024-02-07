@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\PlayerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\TeamAchievementController;
 use App\Http\Controllers\Admin\PlayerAchievementController;
+use App\Http\Controllers\GuestController;
+use App\Models\Team;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,11 @@ use App\Http\Controllers\Admin\PlayerAchievementController;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.home');
-});
+Route::get('/', [GuestController::class, 'home']);
+Route::get('/teams', [GuestController::class, 'teams'])->name('teams');
+Route::get('/teams/{team}', [GuestController::class, 'team'])->name('team');
+Route::get('/players', [GuestController::class, 'players'])->name('players');
+Route::get('/achievements', [GuestController::class, 'achievements'])->name('achievements');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

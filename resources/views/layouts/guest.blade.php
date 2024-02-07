@@ -16,13 +16,19 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="bg-gray-100 font-sfpro text-gray-900 antialiased dark:bg-[#212121] dark:text-white">
-        <div>
+    <body class="bg-dots-lighter bg-gray-100 font-poppins text-gray-900 antialiased dark:bg-[#111111] dark:text-white">
+
+        {{-- <body
+        class="bg-gray-100 font-poppins text-gray-900 antialiased dark:bg-gradient-to-b dark:from-[#222222] dark:via-[#1a1a1a] dark:to-[#080808] dark:text-white"> --}}
+        <div class="flex min-h-screen flex-col">
             @include('layouts.guest-navigation')
 
             <main>
                 {{ $slot }}
             </main>
+            <div class="mt-auto bg-[#181818]">
+                @include('layouts.footer')
+            </div>
         </div>
     </body>
 

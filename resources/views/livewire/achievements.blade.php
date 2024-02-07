@@ -20,6 +20,7 @@
         <thead>
             <tr>
                 <x-table.header>Year</x-table.header>
+                <x-table.header>Placement</x-table.header>
                 @if ($viewType == 'team')
                     <x-table.header>Team Name</x-table.header>
                 @elseif ($viewType == 'player')
@@ -33,6 +34,7 @@
             @foreach ($achievements as $achievement)
                 <tr class="hover:bg-gray-50 hover:dark:bg-gray-700">
                     <x-table.data>{{ $achievement->year }}</x-table.data>
+                    <x-table.data>{{ $achievement->placement }}</x-table.data>
                     @if ($viewType == 'team')
                         @if ($achievement->team_id)
                             <x-table.data>{{ $achievement->team->name }}</x-table.data>

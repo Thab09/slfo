@@ -34,8 +34,9 @@ class TeamAchievementController extends Controller
     public function store(Request $request)
     {
         $formInputs = $request->validate([
+            'placement' => ['nullable'],
             'achievement' => ['required', 'max:255'],
-            'team_id' => [Rule::exists('teams', 'id')],
+            'team_id' => ['nullable', Rule::exists('teams', 'id')],
             'year' => ['nullable'],
         ]);
 
@@ -69,8 +70,9 @@ class TeamAchievementController extends Controller
     public function update(Request $request, TeamAchievement $teamachievement)
     {
         $formInputs = $request->validate([
+            'placement' => ['nullable'],
             'achievement' => ['required', 'max:255'],
-            'team_id' => [Rule::exists('teams', 'id')],
+            'team_id' => ['nullable', Rule::exists('teams', 'id')],
             'year' => ['nullable'],
         ]);
 

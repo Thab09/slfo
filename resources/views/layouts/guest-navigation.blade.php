@@ -1,6 +1,6 @@
-<nav x-data="{ open: false }" class="mt-2 bg-white dark:bg-[#212121]">
+<nav x-data="{ open: false }" class="bg-transparent pt-2">
     <!-- Primary Navigation Menu -->
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <x-guest.container>
         <div class="flex h-16 justify-between">
             <div class="flex">
                 <!-- Logo -->
@@ -14,25 +14,24 @@
             <!-- Settings Dropdown -->
             <div class="hidden sm:ms-6 sm:items-center md:flex">
                 <!-- Navigation Links -->
-                <div class="hidden space-x-4 sm:-my-px sm:ms-4 md:flex">
-                    <x-guest.nav-link href="#" :active="true">
+                <div class="hidden space-x-4 md:-my-px md:ms-2 md:flex lg:ms-4">
+                    <x-guest.nav-link :href="route('teams')" :active="request()->routeIs('teams')">
                         Teams
                     </x-guest.nav-link>
                 </div>
-                <div class="hidden space-x-4 sm:-my-px sm:ms-4 md:flex">
-                    <x-guest.nav-link href="#" :active="false">
+                <div class="hidden space-x-4 md:-my-px md:ms-2 md:flex lg:ms-4">
+                    <x-guest.nav-link :href="route('players')" :active="request()->routeIs('players')">
                         Players
                     </x-guest.nav-link>
                 </div>
-                <div class="hidden space-x-4 sm:-my-px sm:ms-4 md:flex">
-                    <x-guest.nav-link href="#" :active="false">
-                        Gallery
+                <div class="hidden space-x-4 md:-my-px md:ms-2 md:flex lg:ms-4">
+                    <x-guest.nav-link :href="route('achievements')" :active="request()->routeIs('achievements')">
+                        Achievements
                     </x-guest.nav-link>
                 </div>
-                <div class="hidden space-x-4 sm:-my-px sm:ms-4 md:flex">
-                    <x-guest.nav-link href="#" :active="false"
-                        class="rounded-sm text-xs transition delay-150 duration-200 ease-in-out dark:bg-neutral-100 dark:text-neutral-900 dark:hover:text-neutral-900">
-                        Contact Us
+                <div class="hidden space-x-4 md:-my-px md:ms-2 md:flex lg:ms-4">
+                    <x-guest.nav-link href="#" :active="false">
+                        Gallery
                     </x-guest.nav-link>
                 </div>
             </div>
@@ -53,20 +52,21 @@
         </div>
 
         <!-- Responsive Navigation Menu -->
-        <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
+        <div :class="{ 'block': open, 'hidden': !open }" class="hidden md:hidden">
             <div class="space-y-1 pb-3 pt-2">
-                <x-responsive-nav-link :href="route('admin.teams.index')" :active="request()->routeIs('admin.teams.index')">
+                <x-responsive-nav-link :href="route('teams')" :active="request()->routeIs('teams')">
                     Teams
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('admin.players.index')" :active="request()->routeIs('admin.players.index')">
+                <x-responsive-nav-link :href="route('players')" :active="request()->routeIs('players')">
                     Players
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('achievements')" :active="request()->routeIs('achievements')">
+                    Achievements
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('admin.teamachievements.index')" :active="request()->routeIs('admin.achievements.index')">
                     Gallery
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('admin.teamachievements.index')" :active="request()->routeIs('admin.achievements.index')">
-                    Conatct Us
-                </x-responsive-nav-link>
             </div>
         </div>
+    </x-guest.container>
 </nav>

@@ -80,30 +80,38 @@ class DatabaseSeeder extends Seeder
 
         TeamAchievement::factory(13)->create();
         TeamAchievement::factory(13)->create([
-            'team_id' => 2
+            'team_id' => 2,
+            'placement' => 'First'
         ]);
         TeamAchievement::factory(13)->create([
-            'team_id' => 3
+            'team_id' => 3,
+            'placement' => 'Second'
         ]);
         TeamAchievement::factory(13)->create([
-            'team_id' => 4
+            'team_id' => 4,
+            'placement' => 'Third'
         ]);
         TeamAchievement::factory(13)->create([
-            'team_id' => 5
+            'team_id' => 5,
+            'placement' => 'First'
         ]);
 
         PlayerAchievement::factory(13)->create();
         PlayerAchievement::factory(13)->create([
-            'player_id' => 1
+            'player_id' => 1,
+            'placement' => 'First'
         ]);
         PlayerAchievement::factory(13)->create([
-            'player_id' => 2
+            'player_id' => 2,
+            'placement' => 'Second'
         ]);
         PlayerAchievement::factory(13)->create([
-            'player_id' => 3
+            'player_id' => 3,
+            'placement' => 'Third'
         ]);
         PlayerAchievement::factory(13)->create([
-            'player_id' => 4
+            'player_id' => 4,
+            'placement' => 'MVP'
         ]);
         PlayerAchievement::factory(13)->create([
             'player_id' => 5

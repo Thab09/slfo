@@ -7,20 +7,23 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
-        "./resources/**/*.blade.php",
+        './resources/**/*.blade.php',
+        'node_modules/preline/dist/*.js',
     ],
 
     theme: {
+        fontFamily: {
+            roboto: ['roboto', 'sans'],
+            poppins: ['poppins', 'sans'],
+            versal:['versal', 'sans-serif'],
+            sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+        },
         extend: {
-            fontFamily: {
-                roboto: ['roboto', 'sans'],
-                poppins: ['poppins', 'sans'],
-                sfpro:['sfpro', 'sans'],
-                versal:['versal', 'sans-serif'],
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
         },
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+        require('preline/plugin'),
+    ],
 };

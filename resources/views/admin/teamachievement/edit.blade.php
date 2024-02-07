@@ -14,8 +14,29 @@
                         @csrf
                         @method('PUT')
 
-                        <!-- Team Achievement -->
+                        <!-- Team Achievement Placement -->
                         <div>
+                            <x-input-label for="placement">Placement</x-input-label>
+                            <x-select-input id="placement" class="mt-1 block w-full" name="placement">
+                                <option value="" disabled selected>Select Placement</option>
+                                @foreach ($teams as $team)
+                                    <option value="{{ $team->id }}"
+                                        @if ($achievement->team_id == $team->id) selected @endif>
+                                        {{ $team->name }}
+                                    </option>
+                                @endforeach
+                                <option value="First" @if ($achievement->placement == 'First') selected @endif>Champions
+                                </option>
+                                <option value="Second" @if ($achievement->placement == 'Second') selected @endif>Runner-ups
+                                </option>
+                                <option value="Third" @if ($achievement->placement == 'Third') selected @endif>Third Place
+                                </option>
+                            </x-select-input>
+                            <x-input-error :messages="$errors->get('placement')" class="mt-2" />
+                        </div>
+
+                        <!-- Team Achievement -->
+                        <div class="mt-4">
                             <x-input-label for="achievement">Achievement</x-input-label>
                             <x-text-input id="achievement" class="mt-1 block w-full" type="text" name="achievement"
                                 value="{{ $achievement->achievement }}" required autofocus />

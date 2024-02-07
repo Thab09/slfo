@@ -13,8 +13,21 @@
                         enctype="multipart/form-data">
                         @csrf
 
-                        <!-- Team Achievement -->
+                        <!-- Player Achievement Placement -->
                         <div>
+                            <x-input-label for="placement">Placement</x-input-label>
+                            <x-select-input id="placement" class="mt-1 block w-full" name="placement" :selected="old('placement')">
+                                <option value="" disabled selected>Select Placement</option>
+                                <option value="First">Champions</option>
+                                <option value="Second">Runner-ups</option>
+                                <option value="Third">Third Place</option>
+                                <option value="MVP">MVP</option>
+                            </x-select-input>
+                            <x-input-error :messages="$errors->get('placement')" class="mt-2" />
+                        </div>
+
+                        <!-- Player Achievement -->
+                        <div class="mt-4">
                             <x-input-label for="achievement">Achievement</x-input-label>
                             <x-text-input id="achievement" class="mt-1 block w-full" type="text" name="achievement"
                                 :value="old('achievement')" required autofocus />
@@ -26,11 +39,12 @@
                             <livewire:multi-select />
                         </div>
 
-                        <!-- Team Achievement Year -->
+                        <!-- Player Achievement Year -->
                         <div class="mt-4">
                             <x-input-label for="year">Year</x-input-label>
                             <x-select-input id="year" class="mt-1 block w-full" name="year" :selected="old('year')">
-                                @for ($i = 2015; $i < 2050; $i++)
+                                <option value="" disabled selected>Select Year</option>
+                                @for ($i = 2015; $i < 2035; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
                             </x-select-input>

@@ -17,6 +17,7 @@ class TeamAchievementFactory extends Factory
     public function definition(): array
     {
         return [
+            'placement' => fake()->word(),
             'achievement' => fake()->sentence(),
             'team_id' => 1,
             'year' => 2023
